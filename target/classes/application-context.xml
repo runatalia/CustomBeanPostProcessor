@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	  
+    <bean id="loryCat" class="com.springbeans.CombatCat">
+        <property name="name" value="Lory"/>
+    </bean>
+    <bean id="baxterCat" class="com.springbeans.CombatCat">
+        <property name="name" value="Baxter"/>
+    </bean>
+	
+    <bean id="fightClubImpl" class="com.springbeans.FightClubImpl">
+        <property name="LoryCat" ref="loryCat"/>
+        <property name="baxterCat" ref="baxterCat"/>
+    </bean>
+  
+  <bean id="catCalculateStrengthPostProcessor" class="com.springbeans.CatCalculateStrengthPostProcessor"/>
+</beans>
